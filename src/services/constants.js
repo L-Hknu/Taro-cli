@@ -1,1 +1,1 @@
-export const USER_API_UNCOMPLETED = '/h5/api/business/getUserBusinessList/Uncompleted'
+export const ORDER_LIST = '/service/order/order_list.jsp'

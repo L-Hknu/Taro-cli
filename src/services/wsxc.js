@@ -1,9 +1,7 @@
-import { Get, Put } from '../utils/axiosUtils'
-export { USER_API_UNCOMPLETED } from './constants'
+import { Get, Post } from '../utils/axiosUtils'
+// export { ORDER_LIST } from './constants'
 
-export function get(param) {
-    return Get(`${urlPrefix}/h5/api/business/getUserBusinessList/${param}`);
+export function getUserBusinessList() {
+    return Get(`/applay/pass`);
 }
-export function revoke(id) {
-    return Put(`${urlPrefix}/h5/api/businessNode/reset/${id}`);
-}
+

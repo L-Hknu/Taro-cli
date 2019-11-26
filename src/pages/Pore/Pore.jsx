@@ -2,6 +2,7 @@ import Taro, { Component } from '@tarojs/taro'
 import { View, Button, Text } from '@tarojs/components'
 import { observer, inject } from '@tarojs/mobx'
 import { AtButton } from 'taro-ui'
+import { getUserBusinessList } from '@/services/wsxc'
 
 
 @inject('counterStore')
@@ -12,8 +13,13 @@ class Pore extends Component {
     navigationBarTitleText: '首页'
   }
 
-  componentWillMount () { }
-
+  componentWillMount () { 
+    console.log('componentWillMount');
+    getUserBusinessList()
+  }
+  getUserBusinessList(){
+    getUserBusinessList()
+  }
   componentWillReact () {
     console.log('componentWillReact')
   }
@@ -49,6 +55,7 @@ class Pore extends Component {
         <AtButton type='primary' size='normal' onClick={this.decrement}>-</AtButton>
         <AtButton onClick={this.incrementAsync}>Add Async</AtButton>
         <Text>{counter}</Text>
+        <AtButton onClick={this.getUserBusinessList}>Add </AtButton>
       </View>
     )
   }
