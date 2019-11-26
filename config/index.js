@@ -1,3 +1,4 @@
+const path = require('path')
 const config = {
   projectName: 'taro',
   date: '2019-11-23',
@@ -26,11 +27,15 @@ const config = {
   },
   defineConstants: {
   },
+
   copy: {
     patterns: [
     ],
     options: {
     }
+  },
+  alias: {
+    '@': path.resolve(__dirname, '..', 'src'),
   },
   weapp: {
     module: {
@@ -70,6 +75,7 @@ const config = {
   h5: {
     publicPath: '/',
     staticDirectory: 'static',
+    esnextModules: ['taro-ui'],
     module: {
       postcss: {
         autoprefixer: {

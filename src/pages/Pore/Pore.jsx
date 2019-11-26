@@ -1,8 +1,7 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Button, Text } from '@tarojs/components'
 import { observer, inject } from '@tarojs/mobx'
-
-import './Pore.styl'
+import { AtButton } from 'taro-ui'
 
 
 @inject('counterStore')
@@ -46,9 +45,9 @@ class Pore extends Component {
     const { counterStore: { counter } } = this.props
     return (
       <View className='Pore'>
-        <Button onClick={this.increment}>+</Button>
-        <Button onClick={this.decrement}>-</Button>
-        <Button onClick={this.incrementAsync}>Add Async</Button>
+        <AtButton type='primary' size='normal' onClick={this.increment}>+</AtButton>
+        <AtButton type='primary' size='normal' onClick={this.decrement}>-</AtButton>
+        <AtButton onClick={this.incrementAsync}>Add Async</AtButton>
         <Text>{counter}</Text>
       </View>
     )
