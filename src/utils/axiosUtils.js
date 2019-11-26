@@ -28,16 +28,13 @@ Axios.interceptors.request.use(config => {
         if (config.data && config.data.requestName) {
             requestName = config.data.requestName
         } else {
-            requestName = new Date().getTime()
+            requestName = config.url
         }
     } else {
         if (config.params && config.params.requestName) {
             requestName = config.params.requestName
         } else {
-            requestName = new Date().getTime()
-            console.log('====================================');
-            console.log(requestName);
-            console.log('====================================');
+            requestName = config.url
         }
     }
     // 判断，如果这里拿到的参数中的 requestName 在上一次请求中已经存在，就取消上一次的请求
@@ -57,9 +54,6 @@ Axios.interceptors.request.use(config => {
 
 // 请求到结果的拦截处理
 Axios.interceptors.response.use(config => {
-    console.log('====================================');
-    console.log(config);
-    console.log('====================================');
     // 返回请求正确的结果
     return config
 }, error => {
