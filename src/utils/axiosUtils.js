@@ -2,25 +2,22 @@
 import { axios, PostData, FileData } from 'taro-axios'
 //取消请求
 let Axios = axios.create({
-    baseURL: 'http://rap2api.taobao.org/app/mock/177291',
+    baseURL: 'http://rap2api.taobao.org/app/mock',
     // 请求超时的时间限制
     timeout: 30000,
+    //设置默认请求头，如果不需要可以取消这一步
     headers: {
         'Accept': 'application/json; charset=UTF-8',
         'Content-Type': 'application/json; charset=UTF-8'
     },
 });
 const CancelToken = axios.CancelToken
-//设置默认请求头，如果不需要可以取消这一步
-console.log('====================================');
-console.log(CancelToken);
-console.log('====================================');
+
 // 请求超时的时间限制
 
 // 开始设置请求 发起的拦截处理
 // config 代表发起请求的参数的实体
 Axios.interceptors.request.use(config => {
-    console.log(config)
     // 得到参数中的 requestName 字段，用于决定下次发起请求，取消对应的 相同字段的请求
     // 如果没有 requestName 就默认添加一个 不同的时间戳
     let requestName
@@ -123,9 +120,6 @@ export function Get(url, params) {
         }).then(res => {
             resolve(res) // 返回请求成功的数据 data
         }).catch(err => {
-            console.log('====================================');
-            console.log(url);
-            console.log('====================================');
             reject(err)
         })
     })
