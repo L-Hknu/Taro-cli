@@ -1,7 +1,7 @@
 import Taro, { PureComponent } from '@tarojs/taro';
 import { View, Text, Button } from '@tarojs/components';
 import { AtTabBar } from 'taro-ui'
-import Pore from '@/pages/Pore/Pore'
+import { navigateTo } from '@/utils/router'
 class Index extends PureComponent {
 
   config = {
@@ -25,8 +25,8 @@ class Index extends PureComponent {
   componentDidCatchError() { }
   componentDidNotFound() { }
   goLink() {
-    Taro.navigateTo({
-      url: '/pages/Pore/Pore'
+    navigateTo('pore/index',{
+      id:'2546654654654',
     })
   }
   handleClick(value) {
@@ -36,10 +36,16 @@ class Index extends PureComponent {
   }
   render() {
     const { current } = this.state
+    const list={
+      op:"2",
+      ip:'1'
+    }
     return (
       <View>
-        {current === 0 && <Pore></Pore>}
-
+        222
+        <Button onClick={()=>this.goLink()}>goLink</Button>
+        {/* {current === 0 && <Pore></Pore>}
+        {current === 1 && <Wsxc></Wsxc>}
         <AtTabBar
           fixed
           tabList={[
@@ -49,7 +55,7 @@ class Index extends PureComponent {
           ]}
           onClick={this.handleClick.bind(this)}
           current={this.state.current}
-        />
+        /> */}
       </View>
     );
   }

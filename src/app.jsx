@@ -1,9 +1,7 @@
 import Taro, { Component } from '@tarojs/taro'
 import { Provider } from '@tarojs/mobx'
-import Index from './pages/index'
-
-import counterStore from './store/counter'
-
+import Index from '@/pages/index'
+import store from '@/store/index'
 import './app.scss'
 
 // 如果需要在 h5 环境中开启 React Devtools
@@ -12,9 +10,6 @@ import './app.scss'
 //   require('nerv-devtools')
 // }
 
-const store = {
-  counterStore
-}
 
 class App extends Component {
   componentDidMount () {}
@@ -22,13 +17,29 @@ class App extends Component {
   config = {
     pages: [
       'pages/index/index',
-      'pages/Pore/Pore',
+      'pages/pore/index',
     ],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
       navigationBarTitleText: 'WeChat',
       navigationBarTextStyle: 'black'
+    },
+    tabBar:{
+      color: "#666",
+      selectedColor: "#b4282d",
+      backgroundColor: "#fafafa",
+      borderStyle: 'black',
+      list: [
+        { 
+          text: '相册动态',
+          pagePath: 'pages/index/index'
+        },
+        { 
+          text: '我的',
+          pagePath: 'pages/pore/index'
+        },
+      ]
     }
   }
 

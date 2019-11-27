@@ -2,12 +2,12 @@
 import { axios, PostData, FileData } from 'taro-axios'
 //取消请求
 let Axios = axios.create({
-    baseURL: 'http://rap2api.taobao.org/app/mock',
+    // baseURL: 'http://rap2api.taobao.org/app/mock',
     // 请求超时的时间限制
     timeout: 30000,
     //设置默认请求头，如果不需要可以取消这一步
     headers: {
-        'Accept': 'application/json; charset=UTF-8',
+        // 'Accept': 'application/json; charset=UTF-8',
         'Content-Type': 'application/json; charset=UTF-8'
     },
 });

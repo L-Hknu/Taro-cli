@@ -5,7 +5,7 @@ import { AtButton } from 'taro-ui'
 import { getUserBusinessList } from '@/services/wsxc'
 
 
-@inject('counterStore')
+@inject('counterStore','homeStore')
 @observer
 class Pore extends Component {
 
@@ -15,6 +15,9 @@ class Pore extends Component {
 
   componentWillMount () { 
     console.log('componentWillMount');
+    console.log(this.$router.params) 
+    console.log(this.props);
+    
     getUserBusinessList()
   }
   getUserBusinessList(){

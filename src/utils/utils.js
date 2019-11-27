@@ -1,14 +1,13 @@
-export function get7DaysBefore() {
-    let date = new Date(),
-        timestamp, newDate;
-    if (!(date instanceof Date)) {
-        date = new Date(date.replace(/-/g, '/'));
+//路由拼接
+export function parseUrlData(obj) {
+    let prefix = '?'
+    let _result = []
+    for (let key in obj) {
+        let value = obj[key]
+        if (['', undefined, null].includes(value)) {
+            continue
+        }
+        _result.push(encodeURIComponent(key) + '=' + encodeURIComponent(value))
     }
-    timestamp = date.getTime();
-    newDate = new Date(timestamp - 7 * 24 * 3600 * 1000);
-    let month = newDate.getMonth() + 1
-    let day = newDate.getDate()
-    month = month < 10 ? `0${month - 1}` : month
-    day = day < 10 ? `0${day - 1}` : day
-    return `${newDate.getFullYear()}-${month}-${day}`
+    return _result.length ? prefix + _result.join('&') : ''
 }
