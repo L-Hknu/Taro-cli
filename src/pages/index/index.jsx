@@ -25,7 +25,7 @@ class Index extends PureComponent {
   componentDidCatchError() { }
   componentDidNotFound() { }
   goLink() {
-    navigateTo('pore/index',{
+    navigateTo('my/index',{
       id:'2546654654654',
     })
   }
@@ -42,7 +42,6 @@ class Index extends PureComponent {
     }
     return (
       <View>
-        222
         <Button onClick={()=>this.goLink()}>goLink</Button>
         {/* {current === 0 && <Pore></Pore>}
         {current === 1 && <Wsxc></Wsxc>}

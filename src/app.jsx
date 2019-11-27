@@ -3,7 +3,7 @@ import { Provider } from '@tarojs/mobx'
 import Index from '@/pages/index'
 import store from '@/store/index'
 import './app.scss'
-
+import '@tarojs/async-await'
 // 如果需要在 h5 环境中开启 React Devtools
 // 取消以下注释：
 // if (process.env.NODE_ENV !== 'production' && process.env.TARO_ENV === 'h5')  {
@@ -17,7 +17,7 @@ class App extends Component {
   config = {
     pages: [
       'pages/index/index',
-      'pages/pore/index',
+      'pages/my/index',
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -37,14 +37,15 @@ class App extends Component {
         },
         { 
           text: '我的',
-          pagePath: 'pages/pore/index'
+          pagePath: 'pages/my/index'
         },
       ]
     }
   }
 
 
-  componentDidShow () {}
+  componentDidShow () {
+  }
 
   componentDidHide () {}
 

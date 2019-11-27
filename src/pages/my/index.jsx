@@ -7,7 +7,7 @@ import { getUserBusinessList } from '@/services/wsxc'
 
 @inject('counterStore','homeStore')
 @observer
-class Pore extends Component {
+class My extends Component {
 
   config = {
     navigationBarTitleText: '首页'
@@ -18,7 +18,7 @@ class Pore extends Component {
     console.log(this.$router.params) 
     console.log(this.props);
     
-    getUserBusinessList()
+    this.asy()
   }
   getUserBusinessList(){
     getUserBusinessList()
@@ -34,7 +34,12 @@ class Pore extends Component {
   componentDidShow () { }
 
   componentDidHide () { }
-
+   asy=async()=>{
+     let obj= await getUserBusinessList().then(res=>{
+       return res
+     })
+     obj.name='王伟'
+  }
   increment = () => {
     const { counterStore } = this.props
     counterStore.increment()
@@ -53,7 +58,7 @@ class Pore extends Component {
   render () {
     const { counterStore: { counter } } = this.props
     return (
-      <View className='Pore'>
+      <View className='My'>
         <AtButton type='primary' size='normal' onClick={this.increment}>+</AtButton>
         <AtButton type='primary' size='normal' onClick={this.decrement}>-</AtButton>
         <AtButton onClick={this.incrementAsync}>Add Async</AtButton>
@@ -64,4 +69,4 @@ class Pore extends Component {
   }
 }
 
-export default Pore 
+export default My 
