@@ -1,4 +1,6 @@
+const { getIPAdress } = require( './utils')
 const path = require('path')
+
 const config = {
   projectName: 'taro',
   date: '2019-11-23',
@@ -73,6 +75,10 @@ const config = {
     }
   },
   h5: {
+    devServer: {
+      host:getIPAdress(),
+      port: 10086
+    },
     publicPath: '/',
     staticDirectory: 'static',
     esnextModules: ['taro-ui'],
