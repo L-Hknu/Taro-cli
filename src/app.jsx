@@ -18,6 +18,7 @@ class App extends Component {
     pages: [
       'pages/index/index',
       'pages/my/index',
+      'pages/hook/index',
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -32,12 +33,17 @@ class App extends Component {
       borderStyle: 'black',
       list: [
         { 
+
           text: '相册动态',
           pagePath: 'pages/index/index'
         },
         { 
           text: '我的',
           pagePath: 'pages/my/index'
+        },
+        { 
+          text: 'Hook',
+          pagePath: 'pages/hook/index'
         },
       ]
     }

@@ -13,7 +13,7 @@ class Wsxc extends PureComponent {
   render() {
     return (
       <View>
-        1121
+          
       </View>
     );
   }
