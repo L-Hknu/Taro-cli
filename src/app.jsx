@@ -33,15 +33,20 @@ class App extends Component {
       borderStyle: 'black',
       list: [
         { 
-
+          selectedIconPath:'./assets/album/album_findpic_1.png',
+          iconPath:'./assets/album/album_findpic_0.png',
           text: '相册动态',
           pagePath: 'pages/index/index'
         },
         { 
+          selectedIconPath:'./assets/album/album_followed_1.png',
+          iconPath:'./assets/album/album_followed_0.png',
           text: '我的',
           pagePath: 'pages/my/index'
         },
         { 
+          selectedIconPath:'./assets/album/album_user_1.png',
+          iconPath:'./assets/album/album_user_0.png',
           text: 'Hook',
           pagePath: 'pages/hook/index'
         },
