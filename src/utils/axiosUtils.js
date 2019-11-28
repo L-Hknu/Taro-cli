@@ -25,13 +25,13 @@ Axios.interceptors.request.use(config => {
         if (config.data && config.data.requestName) {
             requestName = config.data.requestName
         } else {
-            requestName = config.url
+            requestName =  new Date().getTime()
         }
     } else {
         if (config.params && config.params.requestName) {
             requestName = config.params.requestName
         } else {
-            requestName = config.url
+            requestName =  new Date().getTime()
         }
     }
     // 判断，如果这里拿到的参数中的 requestName 在上一次请求中已经存在，就取消上一次的请求
